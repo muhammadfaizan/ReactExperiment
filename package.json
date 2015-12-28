@@ -1,0 +1,28 @@
+{
+  "name": "usingreact",
+  "version": "0.1.0",
+  "description": "a test application from scratch",
+  "main": "build/index.html",
+  "dependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-react": "^6.3.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "no test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muhammadfaizan/ReactExperiment.git"
+  },
+  "keywords": [
+    "react",
+    "babel"
+  ],
+  "author": "Muhammad Faizan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/muhammadfaizan/ReactExperiment/issues"
+  },
+  "homepage": "https://github.com/muhammadfaizan/ReactExperiment#readme"
+}
