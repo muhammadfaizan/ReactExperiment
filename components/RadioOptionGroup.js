@@ -5,24 +5,32 @@ var RadioOptionGroup = React.createClass({
     getInitialState: function(){
         return {};
     },
+    propTypes: {
+        name: React.PropTypes.string.isRequired,
+        other:React.PropTypes.bool,
+        options:React.PropTypes.array.isRequired
+    },
     onChange: function(evt){
-        console.log(evt.target);
         this.setState({
             selected: evt.target.value
         });
     },
     render: function(){
+        var name = this.props.name;
         return (
             <div onChange={this.onChange}>
                 {this.props.options.map(function(child) {
                     return(
-                        <RadioOption value={child.value}>
+                        <RadioOption name={name}
+                                     value={child.value}>
                             {child.label}
                         </RadioOption>
                     )
                 })}
 
-                {this.props.other && <RadioOtherOption selection={this.state.selected}/> }
+                {this.props.other && <RadioOtherOption
+                    name={name}
+                    selection={this.state.selected}/> }
             </div>
 
 

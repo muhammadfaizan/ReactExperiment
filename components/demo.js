@@ -14,7 +14,10 @@ var Demo = React.createClass({
                 <h1>React.js Radio Group Demo</h1>
                 <form>
                 <p className="h3">How did you hear about us?</p>
-                    <RadioOptionGroup other={true} options={radioOption}/>
+                    <RadioOptionGroup name="referrer"
+                                      other={true}
+                                      options={radioOption}
+                    />
 
 
                 <p>
