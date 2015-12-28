@@ -1,8 +1,7 @@
 /**
  * Created by VD on 12/28/2015.
  */
-var Demo = React.createClass({
-    render: function(){
+ function Demo (){
         var radioOption= [
             {value: 'newspaper', label:'Newspaper'},
             {value: 'radio', label:'Radio'},
@@ -28,4 +27,3 @@ var Demo = React.createClass({
             </div>
         )
     }
-})
