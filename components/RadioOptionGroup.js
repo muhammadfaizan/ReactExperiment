@@ -1,39 +1,49 @@
 /**
  * Created by VD on 12/28/2015.
  */
-var RadioOptionGroup = React.createClass({
-    getInitialState: function(){
-        return {};
-    },
-    propTypes: {
-        name: React.PropTypes.string.isRequired,
-        other:React.PropTypes.bool,
-        options:React.PropTypes.array.isRequired
-    },
-    onChange: function(evt){
-        this.setState({
-            selected: evt.target.value
-        });
-    },
-    render: function(){
-        var name = this.props.name;
-        return (
-            <div onChange={this.onChange}>
-                {this.props.options.map(function(child) {
-                    return(
+function RadioOptionGroup(props) {
+    var name = props.name;
+    //var onCheck = this.props.onCheck;
+    // <div onChange={this.onChange}>
+    return (
+        <div >
+            {props.options.map(function (child) {
+
+                function onCheck (){
+                    props.onCheck(child.value);
+                }
+                if (child.value == 'other') {
+                    return (
+                        <RadioOtherOption
+                            name={name}
+                            key={child.value}
+                            onCheck={onCheck}
+                            checked={child.checked}
+                            />
+                    )
+                }
+                else {
+                    return (
                         <RadioOption name={name}
-                                     value={child.value}>
+                                     key={child.value}
+                                     value={child.value}
+                                     onCheck={onCheck}
+                                     checked={child.checked}
+                            >
                             {child.label}
                         </RadioOption>
                     )
-                })}
+                }
 
-                {this.props.other && <RadioOtherOption
-                    name={name}
-                    selection={this.state.selected}/> }
-            </div>
+            })}
+
+        </div>
 
 
-        )
-    }
-})
+    )
+}
+RadioOptionGroup.propTypes = {
+    name: React.PropTypes.string.isRequired,
+    other: React.PropTypes.bool,
+    options: React.PropTypes.array.isRequired//,
+}

@@ -5,7 +5,8 @@
   "main": "build/index.html",
   "dependencies": {
     "babel-cli": "^6.3.17",
-    "babel-preset-react": "^6.3.13"
+    "babel-preset-react": "^6.3.13",
+    "hoverboard": "^3.0.0-alpha"
   },
   "devDependencies": {},
   "scripts": {

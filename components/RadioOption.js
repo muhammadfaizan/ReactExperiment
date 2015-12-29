@@ -7,7 +7,10 @@ function RadioOption(props){
         <p className="radio">
             <label>
                 <input type="radio" name={props.name}
-                       value={props.value}/>
+                       onClick={props.onCheck}
+                       value={props.value}
+                       checked={props.checked}
+                    />
                         {props.children}
             </label>
         </p>
